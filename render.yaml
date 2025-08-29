@@ -1,0 +1,16 @@
+# render.yaml - Web Service for SuccessLG
+services:
+  - type: web
+    name: SuccessLG-MUST-WORK
+    env: python
+    region: frankfurt
+    branch: main
+    plan: free
+    buildCommand: "poetry install"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: FLASK_ENV
+        value: "production"
+      # Add any other secrets here, e.g., API keys
+      # - key: SECRET_KEY
+      #   value: "your-secret-key"
