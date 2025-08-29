@@ -3,10 +3,11 @@ services:
   - type: web
     name: SuccessLG-MUST-WORK
     env: python
+    pythonVersion: "3.11.15"       # Force Python 3.11
     region: frankfurt
     branch: main
     plan: free
-    buildCommand: "poetry install"
+    buildCommand: "poetry install --no-dev"  # Use Poetry to install dependencies
     startCommand: "gunicorn app:app"
     envVars:
       - key: FLASK_ENV
