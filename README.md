@@ -1,2 +1,0 @@
-# SuccessLG
-You will deploy
